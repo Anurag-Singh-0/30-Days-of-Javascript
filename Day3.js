@@ -5,25 +5,25 @@ notToBe(val) accepts another value and returns true if the two values !== each o
 
 /* Solution 👇 */
 
-function expect(val) {
-  function toBe(anotherVal) {
-    if (val === anotherVal) {
-      return true;
-    } else {
-      return "Not equal";
-    }
-  }
+// function expect(val) {
+//   function toBe(anotherVal) {
+//     if (val === anotherVal) {
+//       return true;
+//     } else {
+//       return "Not equal";
+//     }
+//   }
 
-  function notToBe(anotherVal) {
-    if (val !== anotherVal) {
-      return true;
-    } else {
-      return "Equal";
-    }
-  }
+//   function notToBe(anotherVal) {
+//     if (val !== anotherVal) {
+//       return true;
+//     } else {
+//       return "Equal";
+//     }
+//   }
 
-  return { toBe, notToBe };
-}
+//   return { toBe, notToBe };
+// }
 
-let res = expect(10).toBe(10);
-console.log(res);
+// let res = expect(10).toBe(10);
+// console.log(res);

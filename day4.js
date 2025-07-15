@@ -39,4 +39,3 @@ console.log(res.decrement());
 // console.log(createCounter(10).decrement());
 // console.log(createCounter(10).reset());
 
-
