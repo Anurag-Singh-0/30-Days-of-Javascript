@@ -10,6 +10,8 @@ filteredArr should only contain the elements from the arr for which the expressi
 
 Please solve it without the built-in Array.filter method. 🟠 */
 
+/* Solution 👇 */
+
 let filter = function (arr, fn) {
   const res = [];
   for (let i = 0; i < arr.length; i++) {

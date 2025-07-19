@@ -3,6 +3,8 @@ The returned array should be created such that returnedArray[i] = fn(arr[i], i).
 
 Please solve it without the built-in Array.map method. 🟠 */
 
+/* Solution 👇 */
+
 var map = function (arr, fn) {
   let res = [];
 

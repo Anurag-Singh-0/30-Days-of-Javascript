@@ -8,6 +8,8 @@ If the length of the array is 0, the function should return init.
 
 Please solve it without using the built-in Array.reduce method 🟠*/
 
+/* Solution 👇 */
+
 let = nums = [1, 2, 3, 4];
 
 let = fn = function sum(accum, curr) {
