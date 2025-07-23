@@ -13,51 +13,67 @@ factorial accepts a single integer n and returns 1 if n <= 1 or factorial(n - 1)
 
 /* ⭐ First Approach ⭐ */
 
-function memoize(fn) {
-  const cache = new Map();
-  let callCount = 0;
+// function memoize(fn) {
+//   const cache = new Map();
+//   let callCount = 0;
 
-  const memoizedFn = (...args) => {
-    const key = JSON.stringify(args);
-    if (cache.has(key)) {
-      return cache.get(key);
+//   const memoizedFn = (...args) => {
+//     const key = JSON.stringify(args);
+//     if (cache.has(key)) {
+//       return cache.get(key);
+//     } else {
+//       const result = fn(...args);
+//       cache.set(key, result);
+//       callCount++;
+//       return result;
+//     }
+//   };
+
+//   memoizedFn.getCallCount = () => callCount;
+
+//   return memoizedFn;
+// }
+
+// let fn = function (a, b) {
+//   return a + b;
+// };
+
+// let memorizefn = memoize(fn);
+
+// console.log(memorizefn(2, 3));
+// console.log(memorizefn(2, 3));
+
+// console.log(memorizefn.getCallCount());
+
+/* ⭐ Second Approach ⭐ */
+
+function memoize(fn) {
+  let cache = {};
+  let callCount = 0;
+  const memoizedFn = function (...args) {
+    let key = JSON.stringify(args);
+
+    if (cache.hasOwnProperty(key)) {
+      // To check the key is exist in object or not, [1. use "in" operator], [2. use "hasOwnProperty(key) method"]
+      return cache[key];
     } else {
-      const result = fn(...args);
-      cache.set(key, result);
+      let result = fn(...args);
+      cache[key] = result;
       callCount++;
       return result;
     }
   };
 
-  memoizedFn.getCallCount = () => callCount;
-
+  memoizedFn.getCountCall = () => callCount;
   return memoizedFn;
 }
 
-let fn = function (a, b) {
+function fn(a, b) {
   return a + b;
-};
+}
 
-let memorizefn = memoize(fn);
+let memorizefnRes = memoize(fn);
 
-console.log(memorizefn(2, 3));
-console.log(memorizefn(2, 3));
+console.log(memorizefnRes(2, 3));
 
-console.log(memorizefn.getCallCount());
-
-/* ⭐ Second Approach ⭐ */
-
-// function memoize(fn) {
-//   const cache = {};
-
-//   return function (...args) {
-//     const key = JSON.stringify(args);
-//     if (key in args) {
-//       return cache[key];
-//     } else {
-//       let result = fn(...args);
-//       cache[key] = result;
-//       return result;
-//     }
-//   };
-// }
+console.log(memorizefnRes.getCountCall());

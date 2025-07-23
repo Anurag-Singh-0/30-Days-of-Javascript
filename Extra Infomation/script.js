@@ -12,8 +12,4 @@
 // arr[2]= 3;
 // console.log(arr);
 
-let createCounter = (n) => {
-    return
-}
-
 
