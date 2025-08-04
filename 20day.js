@@ -26,7 +26,8 @@ Explanation: The array has 3 elements so it is not empty. ✴️ */
 
 /* ✴️ Solution ✴️ */
 
-var isEmpty = function (obj) {
-  for (const _ in obj) return false;
-  return true;
-};
+// var isEmpty = function (obj) {
+//   for (const _ in obj) return false;
+//   return true;
+// };
+
