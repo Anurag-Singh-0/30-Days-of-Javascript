@@ -6,7 +6,6 @@ You may assume the array is the output of JSON.parse. ✴️ */
 
 /* ✴️ Solution ✴️ */
 
-
 Array.prototype.last = function () {
-    return this.length === 0 ? - 1 : this[this.length - 1];
+  return this.length === 0 ? -1 : this[this.length - 1];
 };
