@@ -22,3 +22,17 @@ Explanation
 Passing a depth of n=0 will always result in the original array. This is because the smallest possible depth of a subarray (0) is not less than n=0. Thus, no subarray should be flattened. ✴️ */
 
 /* ✴️ Solution ✴️ */
+
+var flat = function (arr, n) {
+  let result = [];
+
+  for (let item of arr) {
+    if (Array.isArray(item) && n > 0) {
+      result.push(...flat(item, n - 1));
+    } else {
+      result.push(item);
+    }
+  }
+
+  return result;
+};
